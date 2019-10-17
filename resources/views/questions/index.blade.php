@@ -31,8 +31,14 @@
                                     {{$question->views . " " . Str::plural('view',$question->answer)}}
                                 </div>
                             </div>
-                            <div class=" media-body"><!--col-sm-9-->
-                                <h3 class="mt-0"><a href="{{$question->url}}">{{$question->title }}</a></h3>
+                            <div class=" media-body">
+                                <div class="d-flex allign-itmes-center">
+                                    <h3 class="mt-0"><a href="{{$question->url}}">{{$question->title }}</a></h3>
+                                    <div class="ml-auto">
+                                        <a href="{{route('questions.edit', $question->id)}}" class="btn btn-sm btn-outline-info">Edit</a>
+                                    </div>
+                                </div>
+
                                 <p class="lead">Asked by
                                     <a href="{{$question->user->url}}">{{$question->user->name}}</a>
                                     <small class="text-muted">{{$question->created_date}}</small>
