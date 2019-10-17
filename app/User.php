@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Answer;
 
 class User extends Authenticatable
 {
@@ -44,6 +45,9 @@ class User extends Authenticatable
     public function getUrlAttribute(){
         //return  route("questions.show", $this->id);
         return '#';
+    }
+    public function answers(){
+        return $this->hasMany(Answer::class);
     }
 
 }
