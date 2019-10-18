@@ -10,6 +10,8 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "axios": "^0.19",
     "bootstrap": "^4.0.0",
     "cross-env": "^5.2.1",
@@ -39,5 +41,8 @@
     "url": "https://github.com/LeonardD93/laravel-qa/issues"
   },
   "homepage": "https://github.com/LeonardD93/laravel-qa#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2"
+  }
 }
