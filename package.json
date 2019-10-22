@@ -43,6 +43,8 @@
     "homepage": "https://github.com/LeonardD93/laravel-qa#readme",
     "description": "",
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.11.2"
+        "@fortawesome/fontawesome-free": "^5.11.2",
+        "izitoast": "^1.4.0",
+        "vue-izitoast": "^1.2.1"
     }
 }
