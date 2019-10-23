@@ -66,7 +66,7 @@
                 return this.body.length < 10;
             },
             endpoint () {
-                return `/questions/${this.questionId}/answers/${this.id}`;
+                return `${this.questionId}/answers/${this.id}`;
             }
         }
     }
