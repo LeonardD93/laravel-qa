@@ -18,21 +18,15 @@
                         <hr>
 
                         <div class="media">
-
-                            @include ('shared._vote', [
-                            'model' => $question
-                            ])
+                            <vote :model="{{ $question }}" name="question"></vote>
 
                             <div class="media-body">
                                 {!! $question->body_html !!}
-
                                 <div class="row">
                                     <div class="col-4"></div>
                                     <div class="col-4"></div>
                                     <div class="col-4">
                                         <user-info :model="{{ $question }}" label="Asked"></user-info>
-
-
                                     </div>
                                 </div>
                             </div>
