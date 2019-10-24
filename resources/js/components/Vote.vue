@@ -1,6 +1,7 @@
 <template>
     <div class="d-fex flex-column vote-controls">
         <a @click.prevent="voteUp" :title="title('up')"
+
            class="vote-up " :class="classes">
             <i class="fas fa-caret-up fa-3x"></i>
         </a>
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+
     import Favorite from './Favorite.vue'
     import Accept from './Accept.vue'
 
@@ -42,6 +44,7 @@
             }
         },
         methods:{
+
             title (voteType) {
                 let titles = {
                     up: `This ${this.name} is useful`,
@@ -75,5 +78,7 @@
         }
     }
 </script>
+
 <style scoped>
 </style>
+

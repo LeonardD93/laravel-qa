@@ -1,3 +1,4 @@
+
 <template>
     <a title="Click to mark as favorite question (Click again to undo)"
        :class="classes" @click.prevent="toggle">
@@ -25,9 +26,11 @@
             },
             endpoint () {
                 return `${this.id}/favorites`;
+
             },
             /*signedIn () {
                 return window.Auth.signedIn;
+
             }
              */
         },

@@ -14,7 +14,6 @@ class AcceptAnswerController extends Controller
                 'message' => "You have accepted this answer as best answer"
             ]);
         }
-
         return back();
     }
 }

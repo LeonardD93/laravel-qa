@@ -1,10 +1,12 @@
 <template>
     <div>
         <a v-if="canAccept" title="Mark this answer as best answer"
+
            :class="classes" @click="create"
         >
             <i class="fas fa-check fa-2x"></i>
         </a>
+
         <a v-if="accepted" title="The question owner accepted this answer as best answer"
            :class="classes"
         >
@@ -16,6 +18,7 @@
 
 <script>
     export default {
+
         props:['answer'],
         data(){
             return {
@@ -35,6 +38,7 @@
                     })
             }
         },
+
         computed:{
             canAccept(){
                 return this.authorize('accept', this.answer);
@@ -52,7 +56,7 @@
         }
     }
 </script>
-
 <style scoped>
 
 </style>
+

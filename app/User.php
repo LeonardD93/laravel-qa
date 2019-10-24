@@ -1,16 +1,10 @@
 <?php
-
 namespace App;
-
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Answer;
-
+use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -20,7 +14,6 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
     protected $appends = ['url', 'avatar'];
-
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -29,35 +22,26 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
-    public function questions(){
+    public function questions()
+    {
         return $this->hasMany(Question::class);
     }
 
-    public function getUrlAttribute(){
-        //return  route("questions.show", $this->id);
+    public function getUrlAttribute()
+    {
+        // return route("questions.show", $this->id);
         return '#';
     }
-    public function answers(){
+    public function answers()
+    {
         return $this->hasMany(Answer::class);
     }
-
     public function getAvatarAttribute()
     {
         $email = $this->email;
         $size = 32;
         return "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?s=" . $size;
     }
-
     public function favorites()
     {
         return $this->belongsToMany(Question::class, 'favorites')->withTimestamps(); //, 'author_id', 'question_id');
@@ -97,7 +81,6 @@ class User extends Authenticatable
 
         $model->votes_count = $upVotes + $downVotes;
         $model->save();
-        return  $model->votes_count;
+        return $model->votes_count;
     }
-
 }
