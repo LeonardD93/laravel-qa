@@ -13,7 +13,8 @@
             return {
                 isFavorited: this.question.is_favorited,
                 count: this.question.favorites_count,
-                id: this.question.id
+                id: this.question.id,
+
             }
         },
         computed: {
@@ -25,7 +26,13 @@
             },
             endpoint () {
                 return `${this.id}/favorites`;
+
+            },
+            /*signedIn () {
+                return window.Auth.signedIn;
+
             }
+             */
         },
         methods: {
             toggle () {
