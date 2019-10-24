@@ -19,7 +19,9 @@ window.Vue = require('vue');
 
 import VueIziToast from 'vue-izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import Authorization from './authorization/authorize';
 Vue.use(VueIziToast);
+Vue.use(Authorization);
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
