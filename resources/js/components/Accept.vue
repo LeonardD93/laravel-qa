@@ -26,7 +26,7 @@
         },
         methods: {
             create () {
-                axios.post(`/answers/${this.id}/accept`)
+                axios.post(`../answers/${this.id}/accept`)
                     .then(res => {
                         this.$toast.success(res.data.message, "Success", {
                             timeout: 3000,
