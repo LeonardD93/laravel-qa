@@ -21,9 +21,6 @@ class QuestionsController extends Controller
     public function index()
     {
         $questions=Question::with('user')->latest()->paginate(10);
-        //return view('questions.index', compact('questions'));
-        //\DB::enableQueryLog();
-        //dump(\DB::getQueryLog());
         return view('questions.index', compact('questions'));
 
     }
@@ -86,6 +83,15 @@ class QuestionsController extends Controller
     {
         $this->authorize("update", $question);
         $question->update($request->only('title', 'body'));
+
+        if ($request->expectsJson())
+        {
+            return response()->json([
+                'message' => "Your question has been updated.",
+                'body_html' => $question->body_html
+            ]);
+        }
+
         return redirect()->route('questions.index')->with('success', "Question updated");
     }
 
@@ -99,6 +105,12 @@ class QuestionsController extends Controller
     {
         $this->authorize("delete", $question);
         $question->delete();
+        if (request()->expectsJson())
+        {
+            return response()->json([
+                'message' => "Your question has been deleted."
+            ]);
+        }
         return redirect()->route('questions.index')->with('success', "Your question has been deleted");
 
     }
