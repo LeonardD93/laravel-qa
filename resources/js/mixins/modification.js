@@ -15,10 +15,8 @@ export default {
             this.restoreFromCache();
             this.editing = false;
         },
-
         setEditCache () {},
         restoreFromCache () {},
-
         update () {
             axios.put(this.endpoint, this.payload())
                 .catch(({response}) => {
@@ -30,9 +28,7 @@ export default {
                     this.editing = false;
                 })
         },
-
         payload () {},
-
         destroy () {
             this.$toast.question('Are you sure about that?', "Confirm", {
                 timeout: 20000,
@@ -45,21 +41,16 @@ export default {
                 position: 'center',
                 buttons: [
                     ['<button><b>YES</b></button>', (instance, toast) => {
-
                         this.delete();
-
                         instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
-
                     }, true],
                     ['<button>NO</button>', function (instance, toast) {
-
                         instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
 
                     }],
                 ]
             });
         },
-
         delete () {}
     }
 }
