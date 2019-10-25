@@ -74,10 +74,10 @@
         },
         computed: {
             isInvalid () {
-                return this.body.length < 10 || this.title.length < 10;
+                return this.body.length < 10 ;//|| this.title.length < 10
             },
             endpoint () {
-                return `/questions/${this.id}`;
+                return `../questions/${this.id}`;
             }
         },
         methods: {
@@ -125,7 +125,7 @@
                                     this.$toast.success(data.message, "Success", { timeout: 2000 });
                                 });
                             setTimeout(() => {
-                                window.location.href = "/questions";
+                                window.location.href = "../questions";
                             }, 3000);
                             instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         }, true],

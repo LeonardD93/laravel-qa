@@ -4219,10 +4219,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     isInvalid: function isInvalid() {
-      return this.body.length < 10 || this.title.length < 10;
+      return this.body.length < 10; //|| this.title.length < 10
     },
     endpoint: function endpoint() {
-      return "/questions/".concat(this.id);
+      return "../questions/".concat(this.id);
     }
   },
   methods: {
@@ -4282,7 +4282,7 @@ __webpack_require__.r(__webpack_exports__);
             });
           });
           setTimeout(function () {
-            window.location.href = "/questions";
+            window.location.href = "../questions";
           }, 3000);
           instance.hide({
             transitionOut: 'fadeOut'
@@ -4442,8 +4442,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Question_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Question.vue */ "./resources/js/components/Question.vue");
 /* harmony import */ var _components_Answers_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Answers.vue */ "./resources/js/components/Answers.vue");
-//
-//
 //
 //
 //
@@ -41149,7 +41147,6 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _vm._v("\n    sono qua\n\n    "),
       _c("question", { attrs: { question: _vm.question } }),
       _vm._v(" "),
       _c("answers", { attrs: { question: _vm.question } })
