@@ -61,8 +61,8 @@
 <script>
     import Vote from './Vote.vue';
     import UserInfo from './UserInfo.vue';
+    import MEditor from './MEditor.vue';
     import modification from '../mixins/modification';
-    import MEditor from './MEditor';
     export default {
         props: ['question'],
         mixins: [modification],
@@ -78,7 +78,7 @@
         },
         computed: {
             isInvalid () {
-                return this.body.length < 10 ;//|| this.title.length < 10
+                return this.body.length < 10 || this.title.length < 10;
             },
             endpoint () {
                 return `../questions/${this.id}`;
@@ -110,7 +110,6 @@
                     window.location.href = "../questions";
                 }, 3000);
             }
-
         }
     }
 </script>
