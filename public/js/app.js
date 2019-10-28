@@ -4369,9 +4369,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var md = new markdown_it__WEBPACK_IMPORTED_MODULE_0___default.a();
-console.log(markdown_it_prism__WEBPACK_IMPORTED_MODULE_1___default.a);
-md.use(markdown_it_prism__WEBPACK_IMPORTED_MODULE_1___default.a);
+var md = new markdown_it__WEBPACK_IMPORTED_MODULE_0___default.a(); //md.use(prism); ha problemi , da risolvere
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['body'],
   computed: {
